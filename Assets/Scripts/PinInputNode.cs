@@ -29,13 +29,11 @@ public class PinInputNode : MonoBehaviour
         {
             cachedIndexChoices.Add(i);
         }
-        Debug.Log("Adding characters");
         for (int i = 0; i < numCharacters; ++i)
         {
             int random = Random.Range(0, cachedIndexChoices.Count);
             int characterIndex = cachedIndexChoices[random];
             characterCycle.Add(allowedCharacters.Substring(characterIndex, 1));
-            Debug.Log(characterCycle[characterCycle.Count-1]);
             cachedIndexChoices.RemoveAt(random);
         }
         target = 0;     // just make the first item in the list always be the target

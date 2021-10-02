@@ -9,6 +9,9 @@ public class App : MonoBehaviour
     public static HumManifest Hums => Instance.hums;
     public HumManifest hums;
 
+    public static MinigameManager MinigameManager => Instance.minigameManager;
+    public MinigameManager minigameManager;
+
     private void Awake()
     {
         Instance = this;

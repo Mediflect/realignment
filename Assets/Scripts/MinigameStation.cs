@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MinigameStation : MonoBehaviour
 {
-    public Minigame minigame;
+    public MinigameType minigameType;
     public DualLoopFader hum;
     public SpriteRenderer testRenderer;
 
@@ -25,6 +25,7 @@ public class MinigameStation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Minigame minigame = App.MinigameManager.GetMinigame(minigameType);
         minigame.station = this;
         minigame.gameObject.SetActive(true);
     }

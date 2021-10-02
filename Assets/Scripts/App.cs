@@ -12,6 +12,9 @@ public class App : MonoBehaviour
     public static MinigameManager MinigameManager => Instance.minigameManager;
     public MinigameManager minigameManager;
 
+    public static ProgressTracker ProgressTracker => Instance.progressTracker;
+    public ProgressTracker progressTracker;
+
     private void Awake()
     {
         Instance = this;

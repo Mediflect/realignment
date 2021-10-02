@@ -13,14 +13,27 @@ public class MinigameStation : MonoBehaviour
 
     private void OnEnable()
     {
-        App.Hums.SetUpRandom(hum);
-        hum.SetFader(0);
-        hum.Play();
+        if (App.IsInitialized)
+        {
+            Initialize();
+        }
+        else
+        {
+            App.OnInitialized += Initialize;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         minigame.station = this;
         minigame.gameObject.SetActive(true);
+    }
+
+    private void Initialize()
+    {
+        App.Hums.SetUpRandom(hum);
+        hum.SetFader(0);
+        hum.Play();
+        App.OnInitialized -= Initialize;
     }
 }

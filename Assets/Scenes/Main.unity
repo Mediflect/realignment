@@ -1738,6 +1738,18 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0.2264151
       objectReference: {fileID: 0}
+    - target: {fileID: 1302825533462447734, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789905795732769089, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789905795732769089, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5727283923615366739, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1785,6 +1797,14 @@ PrefabInstance:
     - target: {fileID: 5727283923615366748, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727283923615366749, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34d0e7800e9f03d469a8aba3c26c7927, type: 3}
+    - target: {fileID: 8800373807244880923, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}

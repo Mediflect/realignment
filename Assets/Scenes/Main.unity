@@ -230,7 +230,51 @@ Transform:
   m_LocalScale: {x: 1, y: 5.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &669877492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669877494}
+  - component: {fileID: 669877493}
+  m_Layer: 0
+  m_Name: App
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &669877493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669877492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d40408fc27b4114282bce06a4553b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hums: {fileID: 11400000, guid: 636e1405ec73f4c489bcb571e57ced83, type: 2}
+--- !u!4 &669877494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669877492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949512069
 GameObject:
@@ -605,7 +649,7 @@ Transform:
   - {fileID: 1515998222}
   - {fileID: 1940291856}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1557752936
 CircleCollider2D:
@@ -688,6 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigame: {fileID: 1515998223}
   hum: {fileID: 1940291857}
+  testRenderer: {fileID: 1557752937}
 --- !u!1 &1697344286
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1940291855
 PrefabInstance:
@@ -897,7 +942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588614557557792011, guid: 05f3f4dd951b24b449d9e3d05ab6cd8b, type: 3}
       propertyPath: m_Name
-      value: ResonanceHum1
+      value: ResonanceHum
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f3f4dd951b24b449d9e3d05ab6cd8b, type: 3}
@@ -1096,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5727283923615366748, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5727283923615366748, guid: e0bd20ccabdf0c342b5ab83cc0c33287, type: 3}
       propertyPath: m_LocalPosition.x

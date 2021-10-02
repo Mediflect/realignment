@@ -42,6 +42,7 @@ public class SliderMinigame : Minigame
             victoryTimer -= Time.deltaTime;
             if (victoryTimer <= 0f)
             {
+                station.OnGameWon();
                 gameObject.SetActive(false);
             }
         }

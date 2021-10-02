@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08556c7852597dc49a959838f8903418, type: 3}
+  m_Name: HumManifest
+  m_EditorClassIdentifier: 
+  hums:
+  - tension: {fileID: 8300000, guid: d0d3077f9fab2c648944a65d1e5cbc60, type: 3}
+    resolution: {fileID: 8300000, guid: 6df8d3cefbce999429d40b943166c74a, type: 3}
+  - tension: {fileID: 8300000, guid: fe2ccdce6ae7d034ba5e446a4175e1fd, type: 3}
+    resolution: {fileID: 8300000, guid: 573b6278a7876a94ba67524aa1dcc454, type: 3}
+  - tension: {fileID: 8300000, guid: 70e3a0a308a658a479a535196052d26f, type: 3}
+    resolution: {fileID: 8300000, guid: 28dad557d64178044bb28434f9e75e65, type: 3}
+  - tension: {fileID: 8300000, guid: 089fa43716a25704e9bb01f1d1bd1cac, type: 3}
+    resolution: {fileID: 8300000, guid: 4c71ce3d454be3946a677d10b90680eb, type: 3}

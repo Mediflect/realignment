@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4588614557557792008}
   - component: {fileID: 4588614557557792015}
   m_Layer: 0
-  m_Name: ResonanceHum1
+  m_Name: ResonanceHum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

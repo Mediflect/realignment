@@ -492,6 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669877494}
   - component: {fileID: 669877493}
+  - component: {fileID: 669877495}
   m_Layer: 0
   m_Name: App
   m_TagString: Untagged
@@ -512,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hums: {fileID: 11400000, guid: 636e1405ec73f4c489bcb571e57ced83, type: 2}
-  minigameManager: {fileID: 1179715520}
+  minigameManager: {fileID: 669877495}
 --- !u!4 &669877494
 Transform:
   m_ObjectHideFlags: 0
@@ -527,6 +528,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669877495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669877492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15906161a3f191c4b9cedb3bd09aaf9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderMinigame: {fileID: 1727266053}
+  knobMinigame: {fileID: 1791280800}
+  pinMinigame: {fileID: 170451177}
 --- !u!1001 &693023938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -597,7 +613,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1179715519}
-  - component: {fileID: 1179715520}
   m_Layer: 5
   m_Name: Minigames
   m_TagString: Untagged
@@ -627,21 +642,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1179715520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179715518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15906161a3f191c4b9cedb3bd09aaf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderMinigame: {fileID: 1727266053}
-  knobMinigame: {fileID: 1791280800}
-  pinMinigame: {fileID: 170451177}
 --- !u!1 &1261948943
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,13 +785,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607482075}
+  - component: {fileID: 1607482076}
   m_Layer: 5
   m_Name: DialogueUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1607482075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -813,6 +814,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 36.5}
   m_SizeDelta: {x: -100, y: 250}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1607482076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607482074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a267a63900aaae428991168edacf995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakerText: {fileID: 1261948945}
+  lineText: {fileID: 2134653311}
+  characterDelay: 0.03
+  shortPauseLength: 0.25
+  shortPauseCharacters: ','
+  longPauseLength: 0.75
+  longPauseCharacters: '!?.'
+  endLinePause: 4
+  endFadeTime: 2
+  sequence: {fileID: 11400000, guid: 4fb4fe86ecab578408ded4d8c4d2af43, type: 2}
 --- !u!224 &1680631602 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4284449593913108687, guid: 1cc53ecd533496245b9ffc70f0ffc602, type: 3}

@@ -35,7 +35,7 @@ public class DialogPlayer : MonoBehaviour
         for (int i = 0; i < sequence.lines.Count; ++i)
         {
             DialogLine line = sequence.lines[i];
-            speakerText.SetText(line.Speaker);
+            speakerText.SetText($"{line.Speaker}:");
             lineText.SetText("");
             for (int j = 0; j < line.Line.Length; ++j)
             {

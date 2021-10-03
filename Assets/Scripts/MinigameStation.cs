@@ -4,14 +4,16 @@ public class MinigameStation : MonoBehaviour
 {
     public MinigameType minigameType;
     public DualLoopFader hum;
-    public SpriteRenderer testRenderer;
+    public SpriteRenderer monitorRenderer;
+    public Sprite goodSprite;
+    public Sprite badSprite;
     public bool IsCompleted => isCompleted;
     
     private bool isCompleted;
 
     public void OnGameWon()
     {
-        testRenderer.color = Color.cyan;
+        monitorRenderer.sprite = goodSprite;
         isCompleted = true;
     }
 
@@ -44,6 +46,7 @@ public class MinigameStation : MonoBehaviour
         App.Hums.SetUpRandom(hum);
         hum.SetFader(0);
         hum.Play();
+        monitorRenderer.sprite = badSprite;
         App.OnInitialized -= Initialize;
     }
 }

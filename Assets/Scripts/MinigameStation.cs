@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
+using System.Collections.Generic;
 
 public class MinigameStation : MonoBehaviour
 {
@@ -7,6 +9,10 @@ public class MinigameStation : MonoBehaviour
     public SpriteRenderer monitorRenderer;
     public Sprite goodSprite;
     public Sprite badSprite;
+    public Color goodColor = Color.green;
+    public Color badColor = Color.red;
+    public List<Light2D> monitorLights;
+
     public bool IsCompleted => isCompleted;
     
     private bool isCompleted;
@@ -14,6 +20,7 @@ public class MinigameStation : MonoBehaviour
     public void OnGameWon()
     {
         monitorRenderer.sprite = goodSprite;
+        SetLightColors(goodColor);
         isCompleted = true;
     }
 
@@ -47,6 +54,15 @@ public class MinigameStation : MonoBehaviour
         hum.SetFader(0);
         hum.Play();
         monitorRenderer.sprite = badSprite;
+        SetLightColors(badColor);
         App.OnInitialized -= Initialize;
+    }
+
+    private void SetLightColors(Color color)
+    {
+        for (int i = 0; i < monitorLights.Count; ++i)
+        {
+            monitorLights[i].color = color;
+        }
     }
 }

@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 17e4776000000000
+  m_ApplyToSortingLayers: 0000000017e47760e7e3d007
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 0000000017e47760
+  m_ApplyToSortingLayers: 0000000017e47760e7e3d007
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1700,6 +1700,76 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!1 &6864170256059962544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8616380195545035703}
+  - component: {fileID: 590947744645493574}
+  m_Layer: 0
+  m_Name: ShadowCaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8616380195545035703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6864170256059962544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8800373807244880923}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590947744645493574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6864170256059962544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 17e47760
+  m_ShapePath:
+  - {x: -1.3970846, y: -1.3900111, z: 0}
+  - {x: -1.7964997, y: -0.7310753, z: 0}
+  - {x: -1.9220142, y: -0.05689144, z: 0}
+  - {x: -1.8060546, y: 0.72127485, z: 0}
+  - {x: -1.271815, y: 1.5057259, z: 0}
+  - {x: -0.68812716, y: 1.8487573, z: 0}
+  - {x: 0.010356545, y: 2.0467825, z: 0}
+  - {x: 0.85977215, y: 1.8487568, z: 0}
+  - {x: 1.5779427, y: 1.3769193, z: 0}
+  - {x: 1.9012601, y: 0.7881589, z: 0}
+  - {x: 2.0758104, y: 0.061674595, z: 0}
+  - {x: 2.0254743, y: -0.4444275, z: 0}
+  - {x: 1.8534846, y: -0.91261315, z: 0}
+  - {x: 1.4356743, y: -1.4894671, z: 0}
+  - {x: 0.79288685, y: -1.8585515, z: 0}
+  - {x: 0.06061256, y: -1.9988172, z: 0}
+  - {x: -0.7741227, y: -1.810777, z: 0}
+  m_ShapePathHash: -1149603725
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 86388
 --- !u!1 &8285633861531013240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1831,7 @@ Transform:
   m_Children:
   - {fileID: 60942813710251202}
   - {fileID: 1647777634087779531}
+  - {fileID: 8616380195545035703}
   m_Father: {fileID: 5727283923615366748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

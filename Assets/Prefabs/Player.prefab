@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8497bb0e331ca74e8dea513ccdbf0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   body: {fileID: 5727283923615366738}
   playerSprite: {fileID: 7254295926422154772}
 --- !u!50 &5727283923615366738

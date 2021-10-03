@@ -28,6 +28,12 @@ public class DialogPlayer : MonoBehaviour
         playCoroutine = StartCoroutine(RunDialogSequence());
     }
 
+    private void Awake()
+    {
+        speakerText.SetText("");
+        lineText.SetText("");
+    }
+
     private IEnumerator RunDialogSequence()
     {
         TMPHelpers.SetTextAlpha(speakerText, 1);

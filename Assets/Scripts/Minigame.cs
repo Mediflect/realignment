@@ -6,6 +6,7 @@ public abstract class Minigame : MonoBehaviour
     public MinigameStation station;
     public float finishWaitTime = 2f;
     public float progress = 0f;
+    public MinigameBackground minigameBackground;
 
     private bool isWinning = false;
     private Coroutine winCoroutine = null;
@@ -13,6 +14,7 @@ public abstract class Minigame : MonoBehaviour
     protected virtual void Update()
     {
         station.hum.SetFader(progress);
+        minigameBackground.SetProgress(progress);
 
         isWinning = progress >= 1f;
         if (isWinning && winCoroutine == null)

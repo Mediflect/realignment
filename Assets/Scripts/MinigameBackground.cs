@@ -9,6 +9,7 @@ public class MinigameBackground : MonoBehaviour
     public Color badColor;
     public Color goodColor;
     public float transitionSpeed = 1f;
+    public Button closeButton;
 
     public float progress = 0f;
     private float lerpValue = 0f;
@@ -16,6 +17,15 @@ public class MinigameBackground : MonoBehaviour
     public void SetProgress(float progress)
     {
         this.progress = progress;
+    }
+
+    private void OnDisable()
+    {
+        lerpValue = 0;
+        screenImage.color = badColor;
+        // this ensures the button is in the right hover state after closing a game
+        closeButton.interactable = false;
+        closeButton.interactable = true;
     }
 
     private void Update()

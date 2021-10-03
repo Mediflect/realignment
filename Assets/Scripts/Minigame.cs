@@ -11,6 +11,14 @@ public abstract class Minigame : MonoBehaviour
     private bool isWinning = false;
     private Coroutine winCoroutine = null;
 
+    public void QuitGame()
+    {
+        progress = 0;
+        station.hum.SetFader(0);
+        gameObject.SetActive(false);
+        station.OnGameQuit();
+    }
+
     protected virtual void Update()
     {
         station.hum.SetFader(progress);
@@ -26,6 +34,11 @@ public abstract class Minigame : MonoBehaviour
             StopCoroutine(winCoroutine);
             winCoroutine = null;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace))
+        {
+            QuitGame();
+        }
     }
 
     private IEnumerator WinCountdown()
@@ -40,6 +53,6 @@ public abstract class Minigame : MonoBehaviour
 public enum MinigameType
 {
     Slider,
-    Knob, 
+    Knob,
     Pin
 }

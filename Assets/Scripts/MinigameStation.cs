@@ -21,7 +21,13 @@ public class MinigameStation : MonoBehaviour
     {
         monitorRenderer.sprite = goodSprite;
         SetLightColors(goodColor);
+        PlayerControls.SetMovementAllowed(true);
         isCompleted = true;
+    }
+
+    public void OnGameQuit()
+    {
+        PlayerControls.SetMovementAllowed(true);
     }
 
     private void OnEnable()
@@ -46,6 +52,7 @@ public class MinigameStation : MonoBehaviour
         Minigame minigame = App.MinigameManager.GetMinigame(minigameType);
         minigame.station = this;
         minigame.gameObject.SetActive(true);
+        PlayerControls.SetMovementAllowed(false);
     }
 
     private void Initialize()

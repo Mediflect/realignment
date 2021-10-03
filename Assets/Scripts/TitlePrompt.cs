@@ -8,6 +8,7 @@ public class TitlePrompt : MonoBehaviour
     public string mainSceneName;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI promptText;
+    public TextMeshProUGUI soundText;
     public float textFadeTime = 2f;
     public float pauseTime = 1f;
     public FullScreenFade fadeOut;
@@ -17,15 +18,17 @@ public class TitlePrompt : MonoBehaviour
 
     private void Awake()
     {
-        titleText.color = new Color(titleText.color.r, titleText.color.g, titleText.color.b, 0f);
-        promptText.color = new Color(promptText.color.r, promptText.color.g, promptText.color.b, 0f);
+        Helpers.SetTextAlpha(titleText, 0);
+        Helpers.SetTextAlpha(promptText, 0);
+        Helpers.SetTextAlpha(soundText, 0);
         App.CameFromTitle = true;
     }
 
     private void OnEnable()
     {
-        titleText.color = new Color(titleText.color.r, titleText.color.g, titleText.color.b, 0f);
-        promptText.color = new Color(promptText.color.r, promptText.color.g, promptText.color.b, 0f);
+        Helpers.SetTextAlpha(titleText, 0);
+        Helpers.SetTextAlpha(promptText, 0);
+        Helpers.SetTextAlpha(soundText, 0);
         StartCoroutine(TextFadeIn());
     }
 
@@ -49,7 +52,7 @@ public class TitlePrompt : MonoBehaviour
         while (titleFadeTimer > 0f)
         {
             float alpha = Mathf.InverseLerp(textFadeTime, 0, titleFadeTimer);
-            titleText.color = new Color(titleText.color.r, titleText.color.g, titleText.color.b, alpha);
+            Helpers.SetTextAlpha(titleText, alpha);
             titleFadeTimer -= Time.deltaTime;
             yield return null;
         }
@@ -60,7 +63,8 @@ public class TitlePrompt : MonoBehaviour
         while (promptFadeTimer > 0f)
         {
             float alpha = Mathf.InverseLerp(textFadeTime, 0, promptFadeTimer);
-            promptText.color = new Color(promptText.color.r, promptText.color.g, promptText.color.b, alpha);
+            Helpers.SetTextAlpha(promptText, alpha);
+            Helpers.SetTextAlpha(soundText, alpha);
             promptFadeTimer -= Time.deltaTime;
             yield return null;
         }

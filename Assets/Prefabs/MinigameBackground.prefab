@@ -202,6 +202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenImage: {fileID: 3092359047859910369}
   badColor: {r: 1, g: 0.7294118, b: 0.53333336, a: 1}
-  goodColor: {r: 0.73333335, g: 1, b: 0.53333336, a: 1}
+  goodColor: {r: 0.53333336, g: 0.8352816, b: 1, a: 1}
   transitionSpeed: 0.5
   progress: 0

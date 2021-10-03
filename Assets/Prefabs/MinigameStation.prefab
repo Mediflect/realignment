@@ -823,7 +823,7 @@ MonoBehaviour:
   monitorRenderer: {fileID: 8427505183810606685}
   goodSprite: {fileID: 21300000, guid: b90cab8a81261f34da972c1d871bd256, type: 3}
   badSprite: {fileID: 21300000, guid: eca3a8e5d6bbb1e49a6af3b3b1087fd6, type: 3}
-  goodColor: {r: 0.35686275, g: 1, b: 0.21176471, a: 1}
+  goodColor: {r: 0.2117647, g: 0.9137255, b: 1, a: 1}
   badColor: {r: 1, g: 0.21176471, b: 0.21176471, a: 1}
   monitorLights:
   - {fileID: 279739920584066434}

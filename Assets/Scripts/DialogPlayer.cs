@@ -36,8 +36,8 @@ public class DialogPlayer : MonoBehaviour
 
     private IEnumerator RunDialogSequence()
     {
-        TMPHelpers.SetTextAlpha(speakerText, 1);
-        TMPHelpers.SetTextAlpha(lineText, 1);
+        Helpers.SetTextAlpha(speakerText, 1);
+        Helpers.SetTextAlpha(lineText, 1);
         for (int i = 0; i < sequence.lines.Count; ++i)
         {
             DialogLine line = sequence.lines[i];
@@ -69,8 +69,8 @@ public class DialogPlayer : MonoBehaviour
         while (fadeTimer > 0f)
         {
             float alpha = Mathf.InverseLerp(0, endFadeTime, fadeTimer);
-            TMPHelpers.SetTextAlpha(speakerText, alpha);
-            TMPHelpers.SetTextAlpha(lineText, alpha);
+            Helpers.SetTextAlpha(speakerText, alpha);
+            Helpers.SetTextAlpha(lineText, alpha);
             fadeTimer -= Time.deltaTime;
             yield return null;
         }

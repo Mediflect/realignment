@@ -7,9 +7,19 @@ public class NarrativeDriver : MonoBehaviour
     public DialogPlayer dialogPlayer;
     public List<DialogSequence> sequences;
     public FullScreenFade fadeIn;
+    [Header("Finale")]
+    public DialogSequence finaleSequence;
+    public GameObject bgmFadeOut;
 
     private int currentSequenceIndex = 0;
     private Queue<DialogSequence> sequenceQueue = new Queue<DialogSequence>();
+
+    public void StartFinale()
+    {
+        sequenceQueue.Clear();
+        bgmFadeOut.SetActive(true);
+        dialogPlayer.PlaySequence(finaleSequence);
+    }
 
     private void Awake()
     {
@@ -30,7 +40,7 @@ public class NarrativeDriver : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogPlayer.IsPlayingSequence && sequenceQueue.Count > 0)
+        if (!MasterConsole.FinaleStarted && !dialogPlayer.IsPlayingSequence && sequenceQueue.Count > 0)
         {
             dialogPlayer.PlaySequence(sequenceQueue.Dequeue());
         }

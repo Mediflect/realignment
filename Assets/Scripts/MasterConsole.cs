@@ -6,7 +6,11 @@ public class MasterConsole : MonoBehaviour
 {
     public static event System.Action RebootChosen;
     public static event System.Action DownloadChosen;
+    public static bool FinaleStarted = false;
 
+    public NarrativeDriver narrativeDriver;
+
+    [Header("Station Stuff")]
     public GameObject container;
     public GameObject finaleObj;
     public DualLoopFader hum;
@@ -91,10 +95,12 @@ public class MasterConsole : MonoBehaviour
 
     private void OnAllStationsComplete()
     {
+        FinaleStarted = true;
         container.SetActive(true);
         hum.Play();
         SetLightColors(goodColor);
         monitorRenderer.sprite = goodSprite;
+        narrativeDriver.StartFinale();
     }
 
     private void OnAnyStationComplete()

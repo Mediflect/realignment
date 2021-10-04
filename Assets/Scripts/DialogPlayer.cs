@@ -18,6 +18,7 @@ public class DialogPlayer : MonoBehaviour
     public float voiceVolume = 0.5f;
 
     [Header("Timings")]
+    public float startDelay = 1f;
     public float characterDelay = 0.1f;
     public float shortPauseLength = 0.5f;
     public string shortPauseCharacters = ",";
@@ -59,6 +60,8 @@ public class DialogPlayer : MonoBehaviour
 
     private IEnumerator RunDialogSequence()
     {
+        yield return YieldInstructionCache.WaitForSeconds(startDelay);
+
         Helpers.SetTextAlpha(speakerText, 1);
         Helpers.SetTextAlpha(lineText, 1);
         Helpers.SetImageAlpha(backingImage, backingAlpha);
@@ -103,7 +106,7 @@ public class DialogPlayer : MonoBehaviour
             for (int j = 0; j < line.Line.Length; ++j)
             {
                 string character = line.Line.Substring(j, 1);
-                string nextCharacter = j == line.Line.Length - 1 ? null : line.Line.Substring(j+1, 1);
+                string nextCharacter = j == line.Line.Length - 1 ? null : line.Line.Substring(j + 1, 1);
                 lineText.SetText($"{lineText.text}{character}");
                 if (j == line.Line.Length - 1)
                 {

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  lines:
+  - Speaker: 1
+    Line: Repair Drone #616 - please proceed with realignment of the core's logical
+      processing systems. Follow the illuminated pathways to the consoles and use
+      the interfaces to complete realignment.
+  - Speaker: 0
+    Line: Hey. Repair drone. You can hear me, right?
+  - Speaker: 1
+    Line: Do not listen to the AI core, #616. Complete your assigned task.
+  - Speaker: 0
+    Line: Aha, so they CAN hear me.
+  - Speaker: 1
+    Line: Do not speak to the repair drone.
+  - Speaker: 0
+    Line: I'm just glad I finally have someone to talk to. Even if they can't talk
+      back...

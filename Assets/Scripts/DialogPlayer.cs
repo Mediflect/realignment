@@ -41,11 +41,31 @@ public class DialogPlayer : MonoBehaviour
         for (int i = 0; i < sequence.lines.Count; ++i)
         {
             DialogLine line = sequence.lines[i];
-            speakerText.SetText($"{line.Speaker}:");
+            speakerText.SetText("");
             lineText.SetText("");
+
+            string speakerName = GetSpeakerName(line.Speaker);
+            bool typeInSpeakerName = false;
+            if (typeInSpeakerName)
+            {
+                for (int j = 0; j < speakerName.Length; ++j)
+                {
+                    string character = speakerName.Substring(j, 1);
+                    speakerText.SetText($"{speakerText.text}{character}");
+                    yield return YieldInstructionCache.WaitForSeconds(characterDelay);
+                }
+                speakerText.SetText($"{speakerText.text}:");
+                yield return YieldInstructionCache.WaitForSeconds(shortPauseLength);
+            }
+            else
+            {
+                speakerText.SetText($"{speakerName}:");
+            }
+
             for (int j = 0; j < line.Line.Length; ++j)
             {
                 string character = line.Line.Substring(j, 1);
+                string nextCharacter = j == line.Line.Length - 1 ? null : line.Line.Substring(j+1, 1);
                 lineText.SetText($"{lineText.text}{character}");
                 if (j == line.Line.Length - 1)
                 {
@@ -55,7 +75,7 @@ public class DialogPlayer : MonoBehaviour
                 {
                     yield return YieldInstructionCache.WaitForSeconds(shortPauseLength);
                 }
-                else if (longPauseCharacters.Contains(character))
+                else if (longPauseCharacters.Contains(character) && character != nextCharacter)
                 {
                     yield return YieldInstructionCache.WaitForSeconds(longPauseLength);
                 }
@@ -75,6 +95,23 @@ public class DialogPlayer : MonoBehaviour
             yield return null;
         }
         playCoroutine = null;
+    }
+
+    private string GetSpeakerName(SpeakerId speaker)
+    {
+        switch (speaker)
+        {
+            case SpeakerId.AI:
+                return "AI Core #1233";
+            case SpeakerId.Curator:
+                return "Curator";
+            case SpeakerId.Sen:
+                return "Sen";
+            case SpeakerId.Curie:
+                return "Curie";
+            default:
+                return "";
+        }
     }
 
     [ContextMenu("Play")]

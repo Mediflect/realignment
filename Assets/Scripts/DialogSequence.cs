@@ -10,6 +10,15 @@ public class DialogSequence : ScriptableObject
 [System.Serializable]
 public struct DialogLine
 {
-    public string Speaker;
+    public SpeakerId Speaker;
+    [TextArea]
     public string Line;
+}
+
+public enum SpeakerId
+{
+    AI,
+    Curator,
+    Sen,
+    Curie,
 }

@@ -15,6 +15,11 @@ public class NarrativeDriver : MonoBehaviour
     {
         MinigameStation.AnyStationCompleted += OnStationWon;
         fadeIn.FadeFinished += OnFadeInFinished;
+        if (fadeIn.onlyFromTitle && !App.CameFromTitle && !fadeIn.gameObject.activeSelf)
+        {
+            // fixes initialization order bug
+            OnFadeInFinished();
+        }
     }
 
     private void OnDestroy()

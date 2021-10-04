@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DualLoopFader : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class DualLoopFader : MonoBehaviour
     public bool chaseFader = false;
     public float chaseSpeed = 1f;
 
+    [Header("Fade Out")]
+    public float fadeOutTime = 3f;
+
     private float lerpValue = 0f;
+    private Coroutine fadeOutCoroutine = null;
 
 
     [ContextMenu("Play")]
@@ -27,6 +32,12 @@ public class DualLoopFader : MonoBehaviour
         resolution.Stop();
     }
 
+    [ContextMenu("Fade Out")]
+    public void FadeOut()
+    {
+        fadeOutCoroutine = StartCoroutine(RunFadeOut());
+    }
+
     public void SetFader(float fader)
     {
         this.fader = fader;
@@ -40,6 +51,11 @@ public class DualLoopFader : MonoBehaviour
 
     private void Update()
     {
+        if (fadeOutCoroutine != null)
+        {
+            return;
+        }
+
         fader = Mathf.Clamp01(fader);
 
         if (chaseFader)
@@ -53,5 +69,22 @@ public class DualLoopFader : MonoBehaviour
 
         tension.volume = Mathf.InverseLerp(1f, 0f, lerpValue);
         resolution.volume = Mathf.InverseLerp(0f, 1f, lerpValue);
+    }
+
+    private IEnumerator RunFadeOut()
+    {
+        float timer = fadeOutTime;
+        float tensionStart = tension.volume;
+        float resolutionStart = resolution.volume;
+        while (timer > 0f)
+        {
+            float progress = Mathf.InverseLerp(fadeOutTime, 0, timer);
+            tension.volume = Mathf.Lerp(tensionStart, 0, progress);
+            resolution.volume = Mathf.Lerp(resolutionStart, 0, progress);
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        fadeOutCoroutine = null;
+        gameObject.SetActive(false);
     }
 }

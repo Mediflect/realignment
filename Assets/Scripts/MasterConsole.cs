@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class MasterConsole : MonoBehaviour
 {
-    public static event System.Action RebootChosen;
-    public static event System.Action DownloadChosen;
     public static bool FinaleStarted = false;
 
     public NarrativeDriver narrativeDriver;
+    public FullScreenFade fadeOut;
+    public string expositionSceneName = "Exposition";
 
     [Header("Station Stuff")]
     public GameObject container;
@@ -29,26 +30,36 @@ public class MasterConsole : MonoBehaviour
 
     public void ChooseReboot()
     {
-        RebootChosen?.Invoke();
         Debug.Log("reboot ending");
+        App.CurrentExposition = ExpositionType.Reboot;
+        StartFadeOut();
     }
 
     public void ChooseDownload()
     {
-        DownloadChosen?.Invoke();
         Debug.Log("download ending");
+        App.CurrentExposition = ExpositionType.Download;
+        StartFadeOut();
+    }
+
+    private void StartFadeOut()
+    {
+        fadeOut.gameObject.SetActive(true);
+        hum.FadeOut();
     }
 
     private void Awake()
     {
         ProgressTracker.OnAllStationsComplete += OnAllStationsComplete;
         MinigameStation.AnyStationCompleted += OnAnyStationComplete;
+        fadeOut.FadeFinished += OnFadeOutFinished;
     }
 
     private void OnDestroy()
     {
         ProgressTracker.OnAllStationsComplete -= OnAllStationsComplete;
         MinigameStation.AnyStationCompleted -= OnAnyStationComplete;
+        fadeOut.FadeFinished -= OnFadeOutFinished;
     }
 
     private void OnEnable()
@@ -110,10 +121,15 @@ public class MasterConsole : MonoBehaviour
         SetLightColors(Color.Lerp(badColor, goodColor, App.ProgressTracker.PercentStationsComplete));
     }
 
+    private void OnFadeOutFinished()
+    {
+        SceneManager.LoadScene(expositionSceneName);
+    }
+
     [ContextMenu("Skip To Finale")]
     private void DebugAllComplete()
     {
-        foreach(MinigameStation station in MinigameStation.AllStations)
+        foreach (MinigameStation station in MinigameStation.AllStations)
         {
             station.OnGameWon();
         }

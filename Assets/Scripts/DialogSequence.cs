@@ -11,7 +11,7 @@ public class DialogSequence : ScriptableObject
 public struct DialogLine
 {
     public SpeakerId Speaker;
-    [TextArea]
+    [TextArea(minLines: 2, maxLines: 10)]
     public string Line;
 }
 

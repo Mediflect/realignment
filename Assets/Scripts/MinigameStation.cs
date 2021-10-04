@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class MinigameStation : MonoBehaviour
 {
+    public static List<MinigameStation> AllStations = new List<MinigameStation>();
+
     public static event System.Action AnyStationCompleted;
     public event System.Action OnCompleted;
 
@@ -25,14 +27,25 @@ public class MinigameStation : MonoBehaviour
         monitorRenderer.sprite = goodSprite;
         SetLightColors(goodColor);
         PlayerControls.SetMovementAllowed(true);
+        isCompleted = true;
+        App.ProgressTracker.CheckStationsComplete();
         OnCompleted?.Invoke();
         AnyStationCompleted?.Invoke();
-        isCompleted = true;
     }
 
     public void OnGameQuit()
     {
         PlayerControls.SetMovementAllowed(true);
+    }
+
+    private void Awake()
+    {
+        AllStations.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        AllStations.Remove(this);
     }
 
     private void OnEnable()
@@ -76,5 +89,11 @@ public class MinigameStation : MonoBehaviour
         {
             monitorLights[i].color = color;
         }
+    }
+
+    [ContextMenu("Debug Complete")]
+    private void DebugComplete()
+    {
+        OnGameWon();
     }
 }

@@ -10,6 +10,7 @@ public class MinigameBackground : MonoBehaviour
     public Color goodColor;
     public float transitionSpeed = 1f;
     public Button closeButton;
+    public bool isFinale = false;
 
     public float progress = 0f;
     private float lerpValue = 0f;
@@ -17,6 +18,14 @@ public class MinigameBackground : MonoBehaviour
     public void SetProgress(float progress)
     {
         this.progress = progress;
+    }
+
+    private void OnEnable()
+    {
+        if (isFinale)
+        {
+            lerpValue = progress;
+        }
     }
 
     private void OnDisable()

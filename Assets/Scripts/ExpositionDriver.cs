@@ -14,7 +14,6 @@ public class ExpositionDriver : MonoBehaviour
     public FullScreenFade fadeOut;
 
     private List<DialogSequence> currentSequences;
-    private int sequenceIndex = 0;
 
     private void OnEnable()
     {
@@ -49,10 +48,9 @@ public class ExpositionDriver : MonoBehaviour
     private IEnumerator RunExposition()
     {
         yield return YieldInstructionCache.WaitForSeconds(beginDelay);
-        sequenceIndex = 0;
         for (int i = 0; i < currentSequences.Count; ++i)
         {
-            dialogPlayer.PlaySequence(currentSequences[sequenceIndex]);
+            dialogPlayer.PlaySequence(currentSequences[i]);
             while (dialogPlayer.IsPlayingSequence)
             {
                 yield return null;

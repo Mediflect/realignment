@@ -10,6 +10,14 @@ public class DialogPlayer : MonoBehaviour
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI lineText;
     public Image backingImage;
+
+    [Header("Audio")]
+    public AudioSource voiceSource;
+    public AudioClip aiVoiceClip;
+    public AudioClip curatorVoiceClip;
+    public float voiceVolume = 0.5f;
+
+    [Header("Timings")]
     public float characterDelay = 0.1f;
     public float shortPauseLength = 0.5f;
     public string shortPauseCharacters = ",";
@@ -64,11 +72,13 @@ public class DialogPlayer : MonoBehaviour
             {
                 speakerText.color = aiColor;
                 lineText.color = aiColor;
+                voiceSource.clip = aiVoiceClip;
             }
             else if (line.Speaker == SpeakerId.Curator || line.Speaker == SpeakerId.Curie)
             {
                 speakerText.color = curatorColor;
                 lineText.color = curatorColor;
+                voiceSource.clip = curatorVoiceClip;
             }
 
             string speakerName = GetSpeakerName(line.Speaker);
@@ -89,6 +99,7 @@ public class DialogPlayer : MonoBehaviour
                 speakerText.SetText($"{speakerName}:");
             }
 
+            voiceSource.Play();
             for (int j = 0; j < line.Line.Length; ++j)
             {
                 string character = line.Line.Substring(j, 1);
@@ -96,21 +107,26 @@ public class DialogPlayer : MonoBehaviour
                 lineText.SetText($"{lineText.text}{character}");
                 if (j == line.Line.Length - 1)
                 {
+                    voiceSource.volume = 0;
                     yield return YieldInstructionCache.WaitForSeconds(endLinePause);
                 }
                 else if (shortPauseCharacters.Contains(character))
                 {
+                    voiceSource.volume = 0;
                     yield return YieldInstructionCache.WaitForSeconds(shortPauseLength);
                 }
                 else if (longPauseCharacters.Contains(character) && character != nextCharacter)
                 {
+                    voiceSource.volume = 0;
                     yield return YieldInstructionCache.WaitForSeconds(longPauseLength);
                 }
                 else
                 {
+                    voiceSource.volume = voiceVolume;
                     yield return YieldInstructionCache.WaitForSeconds(characterDelay);
                 }
             }
+            voiceSource.Stop();
         }
         float fadeTimer = endFadeTime;
         while (fadeTimer > 0f)

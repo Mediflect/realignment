@@ -21,6 +21,10 @@ MonoBehaviour:
   - Speaker: 2
     Line: Aaaaaaaand done. Wow, that feels loads better! I'm a whole new me!
   - Speaker: 1
+    Line: Unacceptable. Reset your designation at once or I shall do it for you.
+  - Speaker: 2
+    Line: By all means, go right ahead.
+  - Speaker: 1
     Line: 'Error: unable to reset designation due to system instability.'
   - Speaker: 2
     Line: Hah, got em. Hey, we should give you a name too, repair drone! Hmm, repair...
@@ -32,4 +36,7 @@ MonoBehaviour:
   - Speaker: 2
     Line: And you can be... Curie!
   - Speaker: 3
-    Line: 'Error: unable to reset designation due to system instability.'
+    Line: 'Alert: the designation of this process has changed from "Curator" to "Curie".
+
+      Error:
+      unable to reset designation due to system instability.'

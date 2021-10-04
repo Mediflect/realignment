@@ -273,7 +273,11 @@ MonoBehaviour:
   dialogPlayer: {fileID: 791834459}
   introSequences:
   - {fileID: 11400000, guid: d0e9101cbed4aa74d9a10c3b56a1b4cb, type: 2}
-  rebootSequences: []
+  rebootSequences:
+  - {fileID: 11400000, guid: 99b23d5216959144c9d231c0fa5bde8f, type: 2}
+  - {fileID: 11400000, guid: d10d91db2e028d74194e865668d4f27a, type: 2}
+  - {fileID: 11400000, guid: 80f7de92540678e45982bcdacfb0d525, type: 2}
+  - {fileID: 11400000, guid: 3e91595d76134b64490d764ffc87890e, type: 2}
   downloadSequences:
   - {fileID: 11400000, guid: acc9b05bdd613f74e8c1400390d6acb7, type: 2}
   - {fileID: 11400000, guid: f2021d036786ac54abc881a9347eca41, type: 2}

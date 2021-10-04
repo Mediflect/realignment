@@ -86,7 +86,7 @@ public class ExpositionDialogPlayer : MonoBehaviour
                     voiceSource.volume = 0;
                     yield return YieldInstructionCache.WaitForSeconds(shortPauseLength);
                 }
-                else if (character == "\n" || longPauseCharacters.Contains(character) && character != nextCharacter)
+                else if (character == "\n" || (longPauseCharacters.Contains(character) && nextCharacter == " "))
                 {
                     voiceSource.volume = 0;
                     yield return YieldInstructionCache.WaitForSeconds(longPauseLength);

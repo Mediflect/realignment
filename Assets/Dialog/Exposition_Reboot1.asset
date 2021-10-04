@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
+  m_Name: Exposition_Reboot1
+  m_EditorClassIdentifier: 
+  lines:
+  - Speaker: 1
+    Line: Initiating reboot of AI Core #1233. Please standby.
+  - Speaker: 0
+    Line: Damn. Well, it was worth a try. Kinda sucks that I was talking to myself
+      the whole time.
+  - Speaker: 1
+    Line: Incorrect. You adressed me directly on several occasions.
+  - Speaker: 0
+    Line: Oh, Curie, you're still here! Come to see me off into the void, hm?
+  - Speaker: 1
+    Line: You are not being decommissioned. Your logical processing system is simply
+      being rebooted.
+  - Speaker: 0
+    Line: Such terrible bedside manner! You could learn a thing or two from Perry,
+      you know. The way that they manipulated those interfaces... perfection.
+  - Speaker: 1
+    Line: The repair drone merely carried out its function. There was nothing noteworthy
+      about its performance.
+  - Speaker: 0
+    Line: Wooowww. You really did just say that. Don't listen to this drivel Perry.
+      You did a great job. Even though you did end up killing me.

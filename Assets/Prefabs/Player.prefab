@@ -715,6 +715,7 @@ MonoBehaviour:
   lightSource: {fileID: 4326698356089730261}
   period: 3.5
   amplitude: 0.2
+  randomizePeriod: 0
 --- !u!114 &1806475255308890524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,6 +1537,7 @@ MonoBehaviour:
   lightSource: {fileID: 1343250190686264293}
   period: 3.5
   amplitude: 0.15
+  randomizePeriod: 0
 --- !u!1 &5205937852846418511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1771,7 @@ MonoBehaviour:
   - {x: -0.7741227, y: -1.810777, z: 0}
   m_ShapePathHash: -1149603725
   m_Mesh: {fileID: 0}
-  m_InstanceId: 86388
+  m_InstanceId: 76572
 --- !u!1 &8285633861531013240
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
-  m_Name: Dialog4_Anger
+  m_Name: Dialog5_Anger
   m_EditorClassIdentifier: 
   lines:
   - Speaker: 3
-    Line: You are making good progress #616. Only a few consoles remain.
+    Line: You are making good progress #616. Only two consoles remain.
   - Speaker: 2
     Line: Excuse me Curie, but my good friend's name is Perry, and I will ask that
       you refer to them as such.

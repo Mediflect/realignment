@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
-  m_Name: Dialog5_Reset
+  m_Name: Dialog4_Reset
   m_EditorClassIdentifier: 
   lines:
   - Speaker: 2

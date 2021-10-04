@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class LightLine : MonoBehaviour
 {
-    public LineFollower followerPrefab;
+    public FollowLight followerPrefab;
     public LineRenderer lineRenderer;
     public float sendPeriod = 5f;
-
-    private List<LineFollower> instantiatedFollowers = new List<LineFollower>();
+    public Color lightsColor = Color.white;
+    
+    private List<FollowLight> instantiatedFollowers = new List<FollowLight>();
     private float sendTimer = 0f;
     private bool followersGoReverse = false;
 
@@ -37,16 +38,17 @@ public class LightLine : MonoBehaviour
         sendTimer -= Time.deltaTime;
         if (sendTimer <= 0f)
         {
-            LineFollower follower = GetNextFollower();
+            FollowLight follower = GetNextFollower();
+            follower.lineFollower.reverse = followersGoReverse;
             follower.gameObject.SetActive(true);
-            follower.reverse = followersGoReverse;
+            follower.glow.color = lightsColor;
             sendTimer = sendPeriod;
         }
     }
 
-    private LineFollower GetNextFollower()
+    private FollowLight GetNextFollower()
     {
-        LineFollower follower = null;
+        FollowLight follower = null;
         for (int i = 0; i < instantiatedFollowers.Count; ++i)
         {
             if (!instantiatedFollowers[i].gameObject.activeSelf)
@@ -59,15 +61,17 @@ public class LightLine : MonoBehaviour
         {
             follower = Instantiate(followerPrefab);
             follower.transform.SetParent(transform);
-            follower.lineRenderer = lineRenderer;
+            follower.lineFollower.lineRenderer = lineRenderer;
             // this is hacky af but it fixes some weird initialization order stuff
-            follower.enabled = false;
-            follower.SetInitialized();
-            follower.enabled = true;
+            follower.lineFollower.enabled = false;
+            follower.lineFollower.SetInitialized();
+            follower.lineFollower.enabled = true;
             instantiatedFollowers.Add(follower);
         }
         return follower;
     }
+
+    
 
     [ContextMenu("Reverse")]
     private void DebugReverse()

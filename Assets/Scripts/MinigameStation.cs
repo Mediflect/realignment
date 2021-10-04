@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class MinigameStation : MonoBehaviour
 {
+    public event System.Action OnCompleted;
+
     public MinigameType minigameType;
     public DualLoopFader hum;
     public SpriteRenderer monitorRenderer;
@@ -22,6 +24,7 @@ public class MinigameStation : MonoBehaviour
         monitorRenderer.sprite = goodSprite;
         SetLightColors(goodColor);
         PlayerControls.SetMovementAllowed(true);
+        OnCompleted?.Invoke();
         isCompleted = true;
     }
 

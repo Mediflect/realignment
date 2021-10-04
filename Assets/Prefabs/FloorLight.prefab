@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8662926455214932867}
+  - component: {fileID: 5126623418450280348}
   - component: {fileID: 8662926455214932868}
   - component: {fileID: 338864754060735270}
   - component: {fileID: 8984402806193168094}
@@ -34,6 +35,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5126623418450280348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662926455214932869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826633dde2811fe4498d8e4c9bab6692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLight: {fileID: 8984402806193168094}
+  lightLine: {fileID: 6744652379910127804}
+  station: {fileID: 0}
+  goodColor: {r: 0.25098038, g: 0.6779253, b: 1, a: 1}
+  badColor: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
 --- !u!212 &8662926455214932868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -563,3 +581,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8771951668116879448, guid: 47a776bb485cf9f4198f4b76b0d3cb0c, type: 3}
   m_PrefabInstance: {fileID: 4934124077537110324}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6744652379910127804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1864585001321130376, guid: 47a776bb485cf9f4198f4b76b0d3cb0c, type: 3}
+  m_PrefabInstance: {fileID: 4934124077537110324}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f4bbc1914ebab44b0f36288d8ec39a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

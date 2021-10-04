@@ -7,8 +7,6 @@ public class LineFollower : MonoBehaviour
 {
     private const int MaxLinePositions = 30;    // should be plenty;
 
-    public event System.Action StoppedMoving;
-
     public LineRenderer lineRenderer;
     public bool reverse = false;
     public float speed = 1f;

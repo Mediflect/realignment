@@ -12,8 +12,12 @@ public class ExpositionDriver : MonoBehaviour
     public List<DialogSequence> rebootSequences;
     public List<DialogSequence> downloadSequences;
     public FullScreenFade fadeOut;
+    public FullScreenFade fadeIn;
+    public GameObject expositionContainer;
+    public GameObject creditsContainer;
 
     private List<DialogSequence> currentSequences;
+    private Coroutine expositionCoroutine;
 
     private void OnEnable()
     {
@@ -32,17 +36,17 @@ public class ExpositionDriver : MonoBehaviour
                 break;
         }
 
-        StartCoroutine(RunExposition());
+        expositionCoroutine = StartCoroutine(RunExposition());
     }
 
     private void Awake()
     {
-        fadeOut.FadeFinished += OnFadeFinished;
+        fadeOut.FadeFinished += OnFadeOutFinished;
     }
 
     private void OnDestroy()
     {
-        fadeOut.FadeFinished -= OnFadeFinished;
+        fadeOut.FadeFinished -= OnFadeOutFinished;
     }
 
     private IEnumerator RunExposition()
@@ -60,15 +64,27 @@ public class ExpositionDriver : MonoBehaviour
         if (App.CurrentExposition == ExpositionType.Intro)
         {
             App.CameFromTitle = true;
-            fadeOut.gameObject.SetActive(true);
         }
+        else
+        {
+            fadeOut.fadeTime *= 2f; // longer more dramatic fade
+        }
+        fadeOut.gameObject.SetActive(true);
+        expositionCoroutine = null;
     }
 
-    private void OnFadeFinished()
+    private void OnFadeOutFinished()
     {
         if (App.CurrentExposition == ExpositionType.Intro)
         {
             SceneManager.LoadScene(mainSceneName);
+        }
+        else
+        {
+            expositionContainer.SetActive(false);
+            fadeOut.gameObject.SetActive(false);
+            fadeIn.gameObject.SetActive(true);
+            creditsContainer.SetActive(true);
         }
     }
 
@@ -94,6 +110,16 @@ public class ExpositionDriver : MonoBehaviour
         App.CurrentExposition = ExpositionType.Download;
         gameObject.SetActive(false);
         gameObject.SetActive(true);
+    }
+
+    [ContextMenu("Skip To Credits")]
+    private void DebugCredits()
+    {
+        StopCoroutine(expositionCoroutine);
+        expositionCoroutine = null;
+        App.CurrentExposition = ExpositionType.Download;
+        fadeOut.fadeTime *= 2f;
+        fadeOut.gameObject.SetActive(true);
     }
 }
 

@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
-  m_Name: Dialog1_Intro
+  m_Name: Dialog1b_AI-Intro
   m_EditorClassIdentifier: 
   lines:
-  - Speaker: 1
-    Line: Repair Drone #616 - please proceed with realignment of the core's logical
-      processing systems. Follow the illuminated pathways to the consoles and use
-      the interfaces to complete realignment.
   - Speaker: 0
     Line: Hey. Repair drone. You can hear me, right?
   - Speaker: 1

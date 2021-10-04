@@ -49,6 +49,12 @@ public class ExpositionDialogPlayer : MonoBehaviour
         lineText.SetText("");
     }
 
+    private void OnDisable()
+    {
+        voiceSource.volume = 0;
+        voiceSource.Stop();
+    }
+
     private IEnumerator RunDialogSequence()
     {
         lineText.SetText("");

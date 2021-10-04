@@ -56,18 +56,19 @@ public class ExpositionDialogPlayer : MonoBehaviour
         for (int i = 0; i < sequence.lines.Count; ++i)
         {
             DialogLine line = sequence.lines[i];
-            lineText.SetText($"{lineText.text}> ");
 
             if (line.Speaker == SpeakerId.AI || line.Speaker == SpeakerId.Sen)
             {
+                lineText.SetText($"{lineText.text}<color=#{ColorUtility.ToHtmlStringRGB(aiColor)}>");
                 lineText.color = aiColor;
                 voiceSource.clip = aiVoiceClip;
             }
             else if (line.Speaker == SpeakerId.Curator || line.Speaker == SpeakerId.Curie)
             {
-                lineText.color = curatorColor;
+                lineText.SetText($"{lineText.text}<color=#{ColorUtility.ToHtmlStringRGB(curatorColor)}>");
                 voiceSource.clip = curatorVoiceClip;
             }
+            lineText.SetText($"{lineText.text}> ");
 
             voiceSource.Play();
             for (int j = 0; j < line.Line.Length; ++j)
@@ -96,7 +97,7 @@ public class ExpositionDialogPlayer : MonoBehaviour
                     yield return YieldInstructionCache.WaitForSeconds(characterDelay);
                 }
             }
-            lineText.SetText($"{lineText.text}\n\n");
+            lineText.SetText($"{lineText.text}</color>\n\n");
         }
         voiceSource.Stop();
 

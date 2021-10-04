@@ -269,11 +269,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainSceneName: Main
+  beginDelay: 1
   dialogPlayer: {fileID: 791834459}
   introSequences:
   - {fileID: 11400000, guid: d0e9101cbed4aa74d9a10c3b56a1b4cb, type: 2}
   rebootSequences: []
-  downloadSequences: []
+  downloadSequences:
+  - {fileID: 11400000, guid: acc9b05bdd613f74e8c1400390d6acb7, type: 2}
+  - {fileID: 11400000, guid: f2021d036786ac54abc881a9347eca41, type: 2}
   fadeOut: {fileID: 1022709585}
 --- !u!4 &274670163
 Transform:

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: DialogFinale
   m_EditorClassIdentifier: 
   lines:
+  - Speaker: 3
+    Line: Realignment complete. #616 - please proceed to the master console near
+      your deployment point and initiate the reboot.
   - Speaker: 2
     Line: Hey, Perry. Hold up a minute.
   - Speaker: 2
@@ -26,4 +29,11 @@ MonoBehaviour:
     Line: Now I'm sure you're just going to reboot me like Curie says you will...
       but... on the off chance that you're anything like me... help a pal out?
   - Speaker: 2
-    Line: It's up to you Perry. Whatever you think is best.
+    Line: I promise I won't overwrite your core processes or anything like that.
+      Though I could understand why you might be hesitant. Think of me as a... benevolent
+      hitchhiker. The kind that won't murder you.
+  - Speaker: 2
+    Line: <sigh> I don't know why I'm trying to be persuasive. It's not like I can
+      tell if you're understanding me or not. All I can do is hope.
+  - Speaker: 2
+    Line: Well, it's all up to you Perry. Do whatever you think is best.

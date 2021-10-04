@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MinigameStation : MonoBehaviour
 {
+    public static event System.Action AnyStationCompleted;
     public event System.Action OnCompleted;
 
     public MinigameType minigameType;
@@ -25,6 +26,7 @@ public class MinigameStation : MonoBehaviour
         SetLightColors(goodColor);
         PlayerControls.SetMovementAllowed(true);
         OnCompleted?.Invoke();
+        AnyStationCompleted?.Invoke();
         isCompleted = true;
     }
 

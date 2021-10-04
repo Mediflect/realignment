@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DialogPlayer : MonoBehaviour
 {
+    public bool IsPlayingSequence => playCoroutine != null;
+
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI lineText;
     public Image backingImage;

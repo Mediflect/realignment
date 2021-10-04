@@ -26,6 +26,14 @@ public class FullScreenFade : MonoBehaviour
         StartCoroutine(RunFade());
     }
 
+    private void OnDisable()
+    {
+        if (onlyFromTitle && !App.CameFromTitle)
+        {
+            FadeFinished?.Invoke();
+        }
+    }
+
     private IEnumerator RunFade()
     {
         float timer = fadeTime;

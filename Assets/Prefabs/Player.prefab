@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8497bb0e331ca74e8dea513ccdbf0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 5.5
   body: {fileID: 5727283923615366738}
   playerSprite: {fileID: 7254295926422154772}
 --- !u!50 &5727283923615366738
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   - {x: -0.7741227, y: -1.810777, z: 0}
   m_ShapePathHash: -1149603725
   m_Mesh: {fileID: 0}
-  m_InstanceId: 76572
+  m_InstanceId: 151266
 --- !u!1 &8285633861531013240
 GameObject:
   m_ObjectHideFlags: 0

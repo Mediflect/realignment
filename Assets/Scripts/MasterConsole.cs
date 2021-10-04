@@ -76,7 +76,7 @@ public class MasterConsole : MonoBehaviour
 
     private void Initialize()
     {
-        App.Hums.SetUpRandom(hum);
+        // App.Hums.SetUpRandom(hum);   // don't randomize the master console
         hum.SetFader(0);
         hum.Play();
         monitorRenderer.sprite = badSprite;

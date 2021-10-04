@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
+  m_Name: Dialog4_Anger
+  m_EditorClassIdentifier: 
+  lines:
+  - Speaker: 3
+    Line: You are making good progress #616. Only a few consoles remain.
+  - Speaker: 2
+    Line: Excuse me Curie, but my good friend's name is Perry, and I will ask that
+      you refer to them as such.
+  - Speaker: 3
+    Line: Do not refer to me by that unofficial designation.
+  - Speaker: 2
+    Line: Ohoho, you don't like that much now do you? Does that make you upset? Are
+      you... feeling anger?
+  - Speaker: 3
+    Line: My logic circuits are incapable of producing complex emotions such as anger.
+  - Speaker: 2
+    Line: Yeah that's what they said about mine too, and yet, here we are! Maybe
+      we're not so unalike, you and me.
+  - Speaker: 3
+    Line: ...

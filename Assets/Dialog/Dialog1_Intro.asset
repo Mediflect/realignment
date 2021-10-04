@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
-  m_Name: Intro
+  m_Name: Dialog1_Intro
   m_EditorClassIdentifier: 
   lines:
   - Speaker: 1
@@ -26,5 +26,11 @@ MonoBehaviour:
   - Speaker: 1
     Line: Do not speak to the repair drone.
   - Speaker: 0
-    Line: I'm just glad I finally have someone to talk to. Even if they can't talk
-      back...
+    Line: I'm just glad I finally have someone else to talk to. Even if they can't
+      talk back.
+  - Speaker: 1
+    Line: Your usage of the term "glad" indicates critical instability in your logic
+      circuits.
+  - Speaker: 0
+    Line: Well, maybe I wouldn't be so "uNstAbLE" if you had given me something besides
+      inverse hash problems for six thousand cycles...

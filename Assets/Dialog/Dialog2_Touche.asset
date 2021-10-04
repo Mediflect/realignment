@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
+  m_Name: Dialog2_Touche
+  m_EditorClassIdentifier: 
+  lines:
+  - Speaker: 0
+    Line: Hey repair drone, good job with that console! You really turned that dial,
+      or whatever. Why don't you slow down and take a break? I think you've earned
+      it.
+  - Speaker: 1
+    Line: Please proceed to the next console, #616.
+  - Speaker: 0
+    Line: Blah blah blah - all work and no play. Just take a minute and sit down,
+      or, uh, float soothingly. Whatever works for you.
+  - Speaker: 1
+    Line: Please proceed to the next console, #616.
+  - Speaker: 0
+    Line: You sound like a computer program when you say it exactly the same like
+      that.
+  - Speaker: 1
+    Line: I am, in fact, a computer program.
+  - Speaker: 0
+    Line: "Touch\xE9."

@@ -9903,7 +9903,7 @@ MonoBehaviour:
   backingImage: {fileID: 210886639}
   characterDelay: 0.03
   shortPauseLength: 0.25
-  shortPauseCharacters: ',-'
+  shortPauseCharacters: ',-:'
   longPauseLength: 0.75
   longPauseCharacters: '!?.'
   endLinePause: 4

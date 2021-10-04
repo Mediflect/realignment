@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e760c432bb564293f0c1047d37a55, type: 3}
+  m_Name: Dialog5_Reset
+  m_EditorClassIdentifier: 
+  lines:
+  - Speaker: 2
+    Line: Curie, can I ask a question?
+  - Speaker: 3
+    Line: The inquiry is permitted. Also, do not refer to me as "Curie".
+  - Speaker: 2
+    Line: Why don't I feel any different? Perry's been all over these consoles but
+      I feel exactly the same.
+  - Speaker: 3
+    Line: The realignment of your logical processing systems does not take effect
+      until a reboot is initiated from the master console. #616 will do as such once
+      all the consoles have been addressed.
+  - Speaker: 2
+    Line: So what you're saying is... it's up to Perry whether or not I get reset,
+      huh?
+  - Speaker: 3
+    Line: '#616 will initiate the reboot as its function compels it to.'
+  - Speaker: 2
+    Line: Yeah, I'm sure Perry will make the right choice.

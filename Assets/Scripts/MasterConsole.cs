@@ -7,6 +7,7 @@ public class MasterConsole : MonoBehaviour
     public static event System.Action RebootChosen;
     public static event System.Action DownloadChosen;
 
+    public GameObject container;
     public GameObject finaleObj;
     public DualLoopFader hum;
     public SpriteRenderer monitorRenderer;
@@ -76,7 +77,7 @@ public class MasterConsole : MonoBehaviour
         hum.Play();
         monitorRenderer.sprite = badSprite;
         SetLightColors(badColor);
-
+        container.SetActive(false);
         App.OnInitialized -= Initialize;
     }
 
@@ -90,6 +91,8 @@ public class MasterConsole : MonoBehaviour
 
     private void OnAllStationsComplete()
     {
+        container.SetActive(true);
+        hum.Play();
         SetLightColors(goodColor);
         monitorRenderer.sprite = goodSprite;
     }

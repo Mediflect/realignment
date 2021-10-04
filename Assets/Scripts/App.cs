@@ -3,6 +3,7 @@ using UnityEngine;
 public class App : MonoBehaviour
 {
     public static bool CameFromTitle = false;
+    public static ExpositionType CurrentExposition = ExpositionType.Intro;
 
     public static event System.Action OnInitialized;
     public static bool IsInitialized => Instance != null;

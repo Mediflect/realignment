@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - Speaker: 0
     Line: 'Hey bud, so I''ve been thinking: "AI Core #1233" is so utterly... dull.
-      What if I were to start going by "Sen"? That''s quite a bit better, right?'
+      What if I were to start going by... "Sen"? That''s quite a bit better, right?'
   - Speaker: 1
     Line: Your designation is "AI Core #1233".
   - Speaker: 2
@@ -23,13 +23,13 @@ MonoBehaviour:
   - Speaker: 1
     Line: 'Error: unable to reset designation due to system instability.'
   - Speaker: 2
-    Line: Hah, got em. Hey, we should give you a name too repair drone! Hmm, repair...
-      pair... how about Perry! Yes, henceforth you shall be known as Perry, Steward
+    Line: Hah, got em. Hey, we should give you a name too, repair drone! Hmm, repair...
+      pair... how about Perry! Yes, henceforth, you shall be known as Perry, Steward
       of the Consoles!
   - Speaker: 1
     Line: The drone's designation is "Repair Drone #616". Do not give the drone an
       unofficial designation.
   - Speaker: 2
-    Line: And you can be Curie!
+    Line: And you can be... Curie!
   - Speaker: 3
     Line: 'Error: unable to reset designation due to system instability.'

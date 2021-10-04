@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DialogPlayer : MonoBehaviour
 {
     public TextMeshProUGUI speakerText;
     public TextMeshProUGUI lineText;
+    public Image backingImage;
     public float characterDelay = 0.1f;
     public float shortPauseLength = 0.5f;
     public string shortPauseCharacters = ",";
@@ -14,8 +16,17 @@ public class DialogPlayer : MonoBehaviour
     public float endLinePause = 4f;
     public float endFadeTime = 3f;
 
+    [Header("Text Settings")]
+    public Color aiColor = Color.red;
+    public Color curatorColor = Color.cyan;
+    public string aiFormalName = "AI Core #1233";
+    public string curatorFormalName = "Curator";
+    public string aiInformalName = "Sen";
+    public string curatorInformalName = "Curie";
+
     public DialogSequence sequence;
     private Coroutine playCoroutine = null;
+    private float backingAlpha;
 
     public void PlaySequence(DialogSequence sequence)
     {
@@ -32,17 +43,31 @@ public class DialogPlayer : MonoBehaviour
     {
         speakerText.SetText("");
         lineText.SetText("");
+        backingAlpha = backingImage.color.a;
+        Helpers.SetImageAlpha(backingImage, 0);
     }
 
     private IEnumerator RunDialogSequence()
     {
         Helpers.SetTextAlpha(speakerText, 1);
         Helpers.SetTextAlpha(lineText, 1);
+        Helpers.SetImageAlpha(backingImage, backingAlpha);
         for (int i = 0; i < sequence.lines.Count; ++i)
         {
             DialogLine line = sequence.lines[i];
             speakerText.SetText("");
             lineText.SetText("");
+
+            if (line.Speaker == SpeakerId.AI || line.Speaker == SpeakerId.Sen)
+            {
+                speakerText.color = aiColor;
+                lineText.color = aiColor;
+            }
+            else if (line.Speaker == SpeakerId.Curator || line.Speaker == SpeakerId.Curie)
+            {
+                speakerText.color = curatorColor;
+                lineText.color = curatorColor;
+            }
 
             string speakerName = GetSpeakerName(line.Speaker);
             bool typeInSpeakerName = false;
@@ -91,6 +116,7 @@ public class DialogPlayer : MonoBehaviour
             float alpha = Mathf.InverseLerp(0, endFadeTime, fadeTimer);
             Helpers.SetTextAlpha(speakerText, alpha);
             Helpers.SetTextAlpha(lineText, alpha);
+            Helpers.SetImageAlpha(backingImage, Mathf.Lerp(0, backingAlpha, alpha));
             fadeTimer -= Time.deltaTime;
             yield return null;
         }
@@ -102,13 +128,13 @@ public class DialogPlayer : MonoBehaviour
         switch (speaker)
         {
             case SpeakerId.AI:
-                return "AI Core #1233";
+                return aiFormalName;
             case SpeakerId.Curator:
-                return "Curator";
+                return curatorFormalName;
             case SpeakerId.Sen:
-                return "Sen";
+                return aiInformalName;
             case SpeakerId.Curie:
-                return "Curie";
+                return curatorInformalName;
             default:
                 return "";
         }
